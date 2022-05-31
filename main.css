@@ -1,8 +1,12 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+ form {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
 }
-body {
-    background-color: aquamarine;
-}
+
+input {
+    position: relative;
+    font-size: 1.5rem;
+} 
+
