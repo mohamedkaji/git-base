@@ -1,7 +1,7 @@
- form {
+form {
   position: relative;
   width: 100%;
-  top : 75px ;
+  
   left : 40px ;
   font-size: 2rem;
 }
@@ -21,6 +21,13 @@ label {
   margin-right: auto;
   width: 6em;
 }
+
+input {
+  margin-left: auto;
+  margin-right: auto;
+  width: 9em;
+}
+
 #ajout {
   margin-left: 15% ; 
  position: relative ;
@@ -963,4 +970,3 @@ body {
   right: 25%;
   opacity: 0.1;
 }
-
