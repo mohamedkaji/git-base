@@ -23,7 +23,7 @@ $nom = $nom_generique = $titre = $nom_proprietaire = $prenom_proprietaire = $pho
 $nom_err = $nom_generique_err = $titre_err = $nom_proprietaire_err = $prenom_proprietaire_err = $photo_err = "";
 
 
-if (isset($_POST)) {
+//if (isset($_POST)) {
     // Check nom
     // if(empty(trim($_POST["nom"]))){
         //     $nom_err = "Entrer le nom de votre animal.";
@@ -50,15 +50,34 @@ if (isset($_POST)) {
                     //         } else{
                         //             $nom_generique = $_POST["nom_generique"];
                         //             }
-    $nom = $_POST["nom"];
-    $nom_generique = $_POST["nom_g"];
-    if (isset($_POST["titre"])) {
-            $titre = $_POST["titre"];
-        }
-    $nom_proprietaire = $_POST["nom_proprietaire"];
-    $prenom_proprietaire = $_POST["prenom_proprietaire"];
-    $photo = $_POST["photo"];
     
+    if (isset($_POST["nom"])) {
+           
+    $nom = $_POST["nom"]; }
+
+    if (isset($_POST["nom_g"])) {
+           
+      $nom_generique = $_POST["nom_g"]; }
+  
+
+    if (isset($_POST["titre"])) {
+           
+      $titre = $_POST["titre"];
+    }
+    if (isset($_POST["nom_proprietaire"])) {
+        $nom_proprietaire = $_POST["nom_proprietaire"]; 
+}
+
+if (isset($_POST["prenom_proprietaire"])){
+$prenom_proprietaire = $_POST["prenom_proprietaire"];
+}
+ 
+if (isset($_POST["photo"])){
+  $photo = $_POST["photo"];
+  }
+
+  if (isset($_POST["nom"])) {
+
     $sql = "INSERT INTO `propriétaire` (`proprietaire_id`, `titre`, `nom`, `prénom`) VALUES (NULL, '$titre', '$nom_proprietaire', '$prenom_proprietaire')";
     $sql_ok = mysqli_prepare($link, $sql);
     mysqli_stmt_execute($sql_ok);
@@ -78,8 +97,10 @@ if (isset($_POST)) {
     $sql_ok2 = mysqli_prepare($link, $sql2);
     mysqli_stmt_execute($sql_ok2);
     
+  }
 
-}
+    
+
 
 ?>
 
@@ -202,7 +223,7 @@ if (isset($_POST)) {
             <label>Prénom</label>
             <input id="nom" type="text" name="nom" value="<?php echo $nom; ?>"> <br>
                 
-            <label>Nom générqiue</label>
+            <label>Nom générique</label>
         <select name="nom_g">
         <option value="">
             <?php while ($gen = mysqli_fetch_array($all_gen,MYSQLI_ASSOC)):;?>
