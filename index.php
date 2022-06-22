@@ -16,7 +16,21 @@ $animaux = $pdoStatement->fetchAll();
 
 $titrePage = "Liste des animaux";
 ?>
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="style2.css" rel="stylesheet" type="text/css">
+    <title>Les animaux Domestiques</title>
+</head>
+<body>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
 <h1>Liste des animaux</h1>
 <table class="table">
   <thead>
