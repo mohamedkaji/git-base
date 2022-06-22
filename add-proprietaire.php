@@ -15,7 +15,7 @@ require_once (__DIR__.DIRECTORY_SEPARATOR.'/db/connexion.php');
 // }
 
 //on insère les données dans la BDD
-require "db/connexion.php";
+// require "db/connexion.php";
 
  $titre = $nom_proprietaire = $prenom_proprietaire =  "";
 
@@ -46,7 +46,7 @@ try {
     $connexion2 = new Connexion();
     $statement = $connexion2->prepare($sql);
     $statement->execute([$titre, $nom_proprietaire, $prenom_proprietaire]);
-    header("location:liste-proprietaire.php?erreur=dbErreur");
+    header("location:add-animal.php");
 } catch (PDOException $ex) {
   header("location:add-proprietaire.php?erreur=dbErreur");
 }
@@ -61,6 +61,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" type="text/css">
     <title>Ajout d'un proprétaire</title>
+    <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
 </head>
 <body>
  
@@ -146,7 +147,7 @@ try {
     <label for="titre">Mr</label>
     <input type="checkbox" id="scales" name="titre" value="Mr">
     <label for="titre">Mme</label>
-    <input type="checkbox" id="scales" name="titre" value="Mme">
+    <input type="checkbox" class="scales" name="titre" value="Mme">
   </div>
   <br>
   
@@ -168,6 +169,9 @@ try {
 
 </form>
 </div>
+
+<!-- <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script> -->
 
 <!-- <button id="proan">Aller vers la page d'ajout d'animal</button> -->
 </body>
