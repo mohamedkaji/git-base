@@ -10,7 +10,7 @@ try {
 }
 
 try {
-  $sql = "delete from animaux where =:id";
+  $sql = "delete from animaux where animaux_id=:id";
   $pdoStat = $connexion->prepare($sql);
   $pdoStat->bindParam(":id", $_POST["id"]);
   $pdoStat->execute();
